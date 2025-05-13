@@ -35,8 +35,8 @@ if lapa.status_code == 200:
     #print(atradu_Player)
     for player in atradu_Player:
         playerLink = player.find(class_="TextLink_link__RhSiC")
-        playerCount += 1
         if playerLink:
+            playerCount += 1
             fulltext = playerLink.get_text(strip=True)
             if '(' in fulltext and ')' in fulltext:
                 name = fulltext.split("(")[0]
@@ -69,8 +69,8 @@ if lapa.status_code == 200:
     #print(atradu_Player)
     for player in atradu_Player:
         playerLink = player.find(class_="TextLink_link__RhSiC")
-        playerCount_2 += 1
         if playerLink:
+            playerCount_2 += 1
             fulltext = playerLink.get_text(strip=True)
             if '(' in fulltext and ')' in fulltext:
                 name = fulltext.split("(")[0]
