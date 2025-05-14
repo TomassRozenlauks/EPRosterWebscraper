@@ -1,14 +1,45 @@
 import requests
 from bs4 import BeautifulSoup
 
-default_adrese = "https://www.eliteprospects.com/team/673/dinamo-riga"
+default_adrese = "https://www.eliteprospects.com"
 
+u18address = "/team/1644/latvia-u18"
+u20address = "/team/1645/latvia-u20"
+senioraddress = "/team/1643/latvia"
 
+selected_team1 = input("Select age group for TEAM 1: U18, U20, SENIOR || DEFAULT - SENIOR")
+selected_team1 = selected_team1.upper()
 
-adrese = "https://www.eliteprospects.com/team/1645/latvia-u20/2023-2024"
-adrese_2 = "https://www.eliteprospects.com/team/1645/latvia-u20"
+if selected_team1 == "U18":
+    adrese = default_adrese + u18address
+elif selected_team1 == "U20":
+    adrese = default_adrese + u20address
+else:
+    adrese = default_adrese + senioraddress 
 
+selected_year1 = input("Select year for TEAM 1, formatted xxxx-xxxx+1 || DEFAULT - CURRENT SEASON")
+if len(selected_year1) == 9:
+    adrese += "/" + str(selected_year1)
+print(adrese)
 
+selected_team2 = input("Select age group for TEAM 2: U18, U20, SENIOR || DEFAULT - SENIOR")
+selected_team2 = selected_team2.upper()
+
+if selected_team2 == "U18":
+    adrese_2 = default_adrese + u18address
+elif selected_team2 == "U20":
+    adrese_2 = default_adrese + u20address
+else:
+    adrese_2 = default_adrese + senioraddress
+
+selected_year2 = input("Select year for TEAM 2, formatted xxxx-xxxx+1 || DEFAULT - CURRENT SEASON")
+if len(selected_year2) == 9:
+    adrese += "/" + str(selected_year2)
+print(adrese_2)
+
+#selected_year2 = input("Select year, formatted xxxx-xxxx+1")
+#adrese = "https://www.eliteprospects.com/team/1645/latvia-u20/2023-2024"
+#adrese_2 = "https://www.eliteprospects.com/team/1645/latvia-u20"
 
 playerCount = 0
 goalieCount = 0
