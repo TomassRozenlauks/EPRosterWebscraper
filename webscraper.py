@@ -96,3 +96,4 @@ for i in range(len(roster_1)):
     for j in range(len(roster_2)):
         if roster_1[i]==roster_2[j]:
             print(roster_1[i])
+            break
